@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, Relation} from "typeorm";
-import { Course } from "./courses.entity";
-import { BaseModel } from "../../../core/base-entity";
+import { Course } from "./courses.entity.js";
+import { BaseModel } from "../../../core/base-entity.js";
 
 @Entity("languages")
 

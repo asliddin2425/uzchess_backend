@@ -1,6 +1,7 @@
-import { Column, Entity, OneToMany } from "typeorm";
+import { Column, Entity, OneToMany, Relation } from "typeorm";
 
-import { BaseModel } from "../../../core/base-entity";
+import { BaseModel } from "../../../core/base-entity.js";
+import { Course } from "./courses.entity.js";
 
 @Entity("sections")
 export class Section extends BaseModel {
@@ -8,8 +9,7 @@ export class Section extends BaseModel {
     @Column({ length: 150 })
     title: string;
 
-    @Column()
-    courseId: number;
-
+   @OneToMany(()=> Course, courses=> courses.section)
+   courses: Relation<Course[]>
     
 }

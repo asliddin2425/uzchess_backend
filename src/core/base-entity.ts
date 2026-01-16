@@ -13,4 +13,7 @@ updatedAt: Date;
 
 @DeleteDateColumn({ type: "timestamp", nullable: true })
 deletedAt: Date;
+
+@Column({type: "boolean", default: false})
+isDeleted: boolean;
 }
