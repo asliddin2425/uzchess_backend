@@ -61,4 +61,5 @@ uploadsRouter.post(
 
         // @ts-ignore
         return res.status(201).json(req.icon);
-    })
+    }
+)
