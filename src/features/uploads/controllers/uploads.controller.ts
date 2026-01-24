@@ -58,8 +58,22 @@ uploadsRouter.post(
         if (!req.file) {
             return res.status(400).json({message: "Fayl yuklanmadi"});
         }
+        // @ts-ignore
+        return res.status(201).json(req.file);
+    }
+)
+
+
+uploadsRouter.post(
+    "/upload/many",
+    upload.array("icons", 5),
+    upload.single("icon"),
+    async (req: Request, res: Response) => {
+        if (!req.files) {
+            return res.status(400).json({message: "Fayl yuklanmadi"});
+        }
 
         // @ts-ignore
-        return res.status(201).json(req.icon);
+        return res.status(201).json(req.files);
     }
 )
